@@ -48,3 +48,62 @@ For this lab, we will be using the dataset in the Customer Analysis Business Cas
 5. Plot every categorical variable. What can you see in the plots? Note that in the previous lab you used a bar plot to plot categorical data, with each unique category in the column on the x-axis and an appropriate measure on the y-axis. However, this time you will try a different plot. This time in each plot for the categorical variable you will have, each unique category in the column on the x-axis and the target(which is numerical) on the Y-axis
 6. For the categorical data, check if there is any data cleaning that need to perform. 
 **Hint**: You can use the function `value_counts()` on each of the categorical columns and check the representation of different categories in each column. Discuss if this information might in some way be used for data cleaning.
+
+<br>
+<br>
+
+# Lab 3 | Feature extraction
+
+For this lab, we will be using the same dataset we used in the previous labs. We recommend using the same notebook since you will be reusing the same variables you previous created and used in labs. 
+
+### Instructions
+
+1. Open the `categoricals` variable we created before.
+
+```python
+categoricals = data.select_dtypes(np.object)
+categoricals.head()
+```
+
+2. Plot all the categorical variables with the proper plot. What can you see?
+3. There might be some columns that seem to be redundant, check their values to be sure. What should we do with them?
+4. Plot time variable. Can you extract something from it?
+
+<br>
+<br>
+
+# Lab 4 | Data cleaning and wrangling
+
+For this lab, we will be using the same dataset we used in the previous labs. We recommend using the same notebook since you will be reusing the same variables you previous created and used in labs. 
+
+### Instructions
+
+So far we have worked on `EDA`. This lab will focus on data cleaning and wrangling from everything we noticed before.
+
+1. We will start with removing outliers. So far, we have discussed different methods to remove outliers. Use the one you feel more comfortable with, define a function for that. Use the function to remove the outliers and apply it to the dataframe.
+2. Create a copy of the dataframe for the data wrangling.
+3. Normalize the continuous variables. You can use any one method you want.
+4. Encode the categorical variables
+5. The time variable can be useful. Try to transform its data into a useful one. Hint: Day week and month as integers might be useful.
+6. Since the model will only accept numerical data, check and make sure that every column is numerical, if some are not, change it using encoding.
+
+**Hint for Categorical Variables**
+
+- You should deal with the categorical variables as shown below (for ordinal encoding, dummy code has been provided as well):
+
+```python
+# One hot to state
+# Ordinal to coverage
+# Ordinal to employmentstatus
+# Ordinal to location code
+# One hot to marital status
+# One hot to policy type
+# One hot to policy
+# One hot to renew offercustomer_df
+# One hot to sales channel
+# One hot vehicle class
+# Ordinal vehicle size
+data["coverage"] = data["coverage"].map({"Basic" : 0, "Extended" : 1, "Premium" : 2})
+# given that column "coverage" in the dataframe "data" has three categories:
+# "basic", "extended", and "premium" and values are to be represented in the same order.
+```
