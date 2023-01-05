@@ -107,3 +107,34 @@ data["coverage"] = data["coverage"].map({"Basic" : 0, "Extended" : 1, "Premium" 
 # given that column "coverage" in the dataframe "data" has three categories:
 # "basic", "extended", and "premium" and values are to be represented in the same order.
 ```
+
+<br>
+<br>
+
+# Lab 5 | Comparing regression models
+
+
+For this lab, we will be using the same dataset we used in the previous labs. We recommend using the same notebook since you will be reusing the same variables you previous created and used in labs. 
+
+### Instructions
+
+1. In this final lab, we will model our data. Import sklearn `train_test_split` and separate the data.
+2. Try a simple linear regression with all the data to see whether we are getting good results.
+3. Great! Now define a function that takes a list of models and train (and tests) them so we can try a lot of them without repeating code.
+4. Use the function to check `LinearRegressor` and `KNeighborsRegressor`.
+5. You can check also the `MLPRegressor` for this task!
+6. Check and discuss the results.
+
+
+<br>
+<br>
+
+# Lab 6 | Random variable distributions
+
+Refer to the `files_for_lab/we_fn_use_c_marketing_customer_value_analysis.csv` dataset.
+
+### Instructions
+
+1. Get the numerical variables from our dataset.
+2. Check using a distribution plot if the variables fit the theoretical normal or exponential distribution.
+3. Check if any of the transformations (log-transform, etc.) we have seen up to this point changes the result.
